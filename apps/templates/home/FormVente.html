@@ -1,0 +1,49 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Maps {% endblock title %}
+
+{% block content %}
+
+	<!-- HTML Input Types -->
+    <div class="card ">
+        <div class="card-header">
+           <h2 style="margin-left: 450px;">Enrégistrement</h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-primary">
+                <div class="media align-items-center">
+                    <i class="feather icon-alert-circle h2"></i>
+                    <div class="media-body ms-3">
+                        <h3>Enrégistrer les détails sur la vente des produits !!!</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="demo-search-input" class="col-form-label">Produits</label>
+                <input class="form-control" type="search" placeholder="Taper le nom de la culture" id="demo-search-input">
+                <small>Le nom de votre produit doit-être saisie.</small>
+            </div>
+            <div class="form-group">
+                <label for="demo-number-input" class="col-form-label">Quantité(Kg)</label>
+                <input class="form-control" type="number" placeholder="100" id="demo-number-input">
+            </div>
+            <div class="form-group">
+                <label for="demo-date-only" class="col-form-label">Date d'entrée</label>
+                <input class="form-control" type="date" placeholder="Enrégistrer la date du produits" id="demo-date-only">
+            </div>
+            <div class="form-group">
+                <label for="demo-number-input" class="col-form-label">Prix(FCFA)</label>
+                <input class="form-control" type="number" placeholder="100" id="demo-number-input">
+            </div>
+           
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary me-2">Enrégistrer</button>
+            <a href="/Ventes.html"> <button class="btn btn-secondary">Annuler</button></a>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,173 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Maps {% endblock title %}
+
+{% block content %}
+
+
+
+    <div class="row mt-4" style="margin-left: 30px;">
+        <div class="d-flex justify-content-between mb-4">
+            <form class="search">
+                <div class="d-flex gap-3 align-items-center">
+                    <input type="text" placeholder="Search for sales" name="search" id="" class="form-control">
+                    <button type="submit" class="btn btn-primary height mt-2" style="margin-left: 15px;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form> 
+
+
+            <div class="hide-show" style="margin-left: 130px;">
+                <form method="post">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hide / Show Column
+                        </button>
+                        <div id="dropdownDefaultCheckbox">
+                            <ul class="dropdown-menu hide-show-dropdown px-3">
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="ID" value="" id="checkbox-item-1">
+                                        <label class="form-check-label" for="checkbox-item-1">
+                                            ID
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Product" value="" id="checkbox-item-2">
+                                        <label class="form-check-label" for="checkbox-item-2">
+                                            Product
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="BuyerEmail" value="" id="checkbox-item-3">
+                                        <label class="form-check-label" for="checkbox-item-3">
+                                            BuyerEmail
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="PurchaseDate" value="" id="checkbox-item-4">
+                                        <label class="form-check-label" for="checkbox-item-4">
+                                            PurchaseDate
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Country" value="" id="checkbox-item-5" >
+                                        <label class="form-check-label" for="checkbox-item-5">
+                                            Country
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Price" value="" id="checkbox-item-6">
+                                        <label class="form-check-label" for="checkbox-item-6">
+                                            Price
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Refunded" value="" id="checkbox-item-7">
+                                        <label class="form-check-label" for="checkbox-item-7">
+                                            Refunded
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Currency" value="" id="checkbox-item-8">
+                                        <label class="form-check-label" for="checkbox-item-8">
+                                            Currency
+                                        </label>
+                                    </div>
+                                
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input"  type="checkbox" data-target="Quantity" value="" id="checkbox-item-9">
+                                        <label class="form-check-label" for="checkbox-item-9">
+                                            Quantity
+                                        </label>
+                                    </div>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+           
+        <div class="mb-4" style="margin-left: 150px;">
+            <form action="/tables/create-filter/" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="vZzWWR4rxFgZ98VFV47hXf1xKpTLC6GQIeIAecL9WmeRWh5sovhIfSHF8ps0982b">
+    
+                    <div class="d-flex gap-3 align-items-center mb-3">
+                        <a href="/FormMembres.html"> <button id="addButton" type="button" class="btn btn-primary" title="Cliquer pour ajouter d'utilisateurs"><i class="fa fa-plus"></i>
+                            Ajouter Utilisateurs</button></a>
+                    </div>
+                    <div class="mb-3" id="inputContainer">
+                        
+                    </div>
+                    <button id="submitButton" type="submit"  style="display: none;"  class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Coordonées des Agriculteurs</h2>
+                <small>Tous les coordonnées des utiilsateurs seront vu ici par l'admin.</small>
+            </div>
+            <div class="card-body">
+                <div class="dt-responsive table-responsive">
+                    
+                    <table class="table">
+                        <thead>
+                          <tr>
+
+                                <th id="th_nom" scope="col">Nom</th>
+                            
+                                <th id="th_email" scope="col">Email</th>
+                            
+                                <th id="th_mot de passe" scope="col">Mot de passe</th>
+                            
+                                <th id="th_adresses" scope="col">Adresses</th>
+                            
+                                <th id="th_telephone" scope="col">Téléphone</th>
+                            
+                                <th id="th_actions" scope="col">Actions(Modifier/Suprimer)</th>
+                            
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for membre in membres %}
+                            <tr>
+                                <td>{{membre.nom}}</td>
+                                <td>{{membre.email}}</td>
+                                <td>{{membre.mot_de_passe}}</td>
+                                <td>{{membre.adresse}}</td>
+                                <td>{{membre.telephone}}</td>
+                                <td>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Modifier
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Supprimer
+                                    </a>
+                                </td>
+
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                            
+                            
+                            
+                            <!-- Edit Sales -->
+                           
+
+{% endblock content %}
+

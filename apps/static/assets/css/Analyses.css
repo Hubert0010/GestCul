@@ -1,0 +1,56 @@
+/* Style de la carte contenant le graphique donut */
+.card.card-danger {
+    border: 1px solid #e3e6f0;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    overflow: hidden;
+  }
+  
+  .card-header {
+    background: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .card-tools {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-tool {
+    background: transparent;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .btn-tool:hover {
+    color: #007bff;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  canvas#donutChart {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Ajouter une petite marge en bas pour les autres éléments de la page */
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  

@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Maps {% endblock title %}
+
+{% block content %}
+
+	<!-- HTML Input Types -->
+    <div class="card ">
+        <div class="card-header">
+           <h2 style="margin-left: 450px;">Ajout des Pratiques</h2>
+        </div>
+        <div class="card-body">
+            <div class="alert alert-primary">
+                <div class="media align-items-center">
+                    <i class="feather icon-alert-circle h2"></i>
+                    <div class="media-body ms-3">
+                        <h3>Saisissez les Cultures que vous avez ainsi que leurs descriptions !!!</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="demo-search-input" class="col-form-label">Nom</label>
+                <input class="form-control" type="search" placeholder="Tapez le nom de la culture" id="demo-search-input">
+                <small>Le nom de votre culture doit-être saisie ici.</small>
+            </div>
+            <div class="form-group mb-0">
+                <label class="form-label" for="exampleTextarea">Descriptions</label>
+                <textarea class="form-control" id="exampleTextarea" placeholder="Décrivez l'évolution de la culture" rows="3"></textarea>
+            </div>
+           
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary me-2">Submit</button>
+            <a href="/Suivi_des_Cultures.html"> <button class="btn btn-secondary">Cancel</button></a>
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

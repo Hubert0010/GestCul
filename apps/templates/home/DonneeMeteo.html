@@ -1,0 +1,192 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Icons {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+{%load static%}
+<link rel="stylesheet" href="{%static 'assets/css/Meteo.css'%}">
+
+
+
+
+<div class="page-content page-container" id="page-content" style="margin-right: 100px;">
+    <div class="padding">
+      <div class="row d-flex">
+        <!-- Carte météo -->
+        <div class="col-lg-6">
+          <div class="card card-weather">
+            <div class="card-body">
+              <div class="weather-date-location">
+                <h3>Friday</h3>
+                <p class="text-gray">
+                  <span class="weather-date">25 March, 2019</span>
+                  <span class="weather-location">Sydney, Australia</span>
+                </p>
+              </div>
+              <div class="weather-data d-flex">
+                <div class="mr-auto">
+                  <h4 class="display-3">32 &deg; C</h4>
+                  <p>Cloudy</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="d-flex weakly-weather">
+                  <div class="weakly-weather-item">
+                    <p class="mb-0">
+                      Sun
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      30&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Mon
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      31&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Tue
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      28&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Wed
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      30&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Thu
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      29&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Fri
+                    </p>
+                    <i class="fa fa-sun"></i>
+
+                    <p class="mb-0">
+                      31&deg;
+                    </p>
+                  </div>
+                  <div class="weakly-weather-item">
+                    <p class="mb-1">
+                      Sat
+                    </p>
+                    <i class="fa fa-sun"></i>
+                    <p class="mb-0">
+                      32&deg;
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--weather card ends-->
+          </div>
+          </div>
+          </div>
+          </div>
+  
+        <!-- Formulaire de produits -->
+        <div class="col-lg-6">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="demo-search-input" class="col-form-label">Produits</label>
+              <input class="form-control" type="search" placeholder="Taper le nom de la culture" id="demo-search-input">
+              <small>Le nom de votre produit doit être saisi.</small>
+            </div>
+            <div class="form-group">
+              <label for="demo-number-input" class="col-form-label">Quantité</label>
+              <input class="form-control" type="number" placeholder="100" id="demo-number-input">
+            </div>
+            <div class="form-group">
+              <label for="demo-date-only" class="col-form-label">Date d'entrée</label>
+              <input class="form-control" type="date" placeholder="Enregistrer la date du produit" id="demo-date-only">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary me-2">Submit</button>
+            <a href="/Stock.html"> <button class="btn btn-secondary">Cancel</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<br>
+        <div class="card" style="margin-left: 275px;">
+            <div class="card-header">
+                <h2>Gestion de stocks</h2>
+                <small>Tous les cultures Stokées seront gérer par l'administrateur ou l'utiilsateurs.</small>
+            </div>
+            <div class="card-body">
+                <div class="dt-responsive table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                                <th id="th_nom" scope="col">Produits</th>
+                            
+                                <th id="th_email" scope="col">Quantité</th>
+
+                                <th id="th_email" scope="col">Date d'entrer</th>
+                            
+                                <th id="th_email" scope="col">Actions</th>
+                            
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr class="align-middle table-row">
+                                
+                                
+                                <td class="td_nom data-td">USA</td>
+                                
+                                <td class="td_descriptions data-td">10.51</td>
+
+                                <td class="td_descriptions data-td">10.51</td>
+
+                                <td class="td_actions data-td"><a class="btn btn-info btn-sm" href="#">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </a></td>
+    
+                                
+                                <td class="action-td d-none">
+                                    <a data-bs-toggle="modal" data-bs-target="#editSales-1" class="btn btn-primary btn-sm p-0 ps-3 py-2 pe-1" href="#"><i class="fas fa-edit"></i></a>
+                                    <a data-bs-toggle="modal" data-bs-target="#deleteSales-1" class="btn btn-danger btn-sm p-0 ps-3 py-2 pe-1" href="#"><i class="fas fa-trash-alt"></i></a>
+                                </td>
+                                
+                            </tr>
+
+
+  {% endblock content %}
